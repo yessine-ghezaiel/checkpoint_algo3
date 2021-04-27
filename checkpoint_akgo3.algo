@@ -1,0 +1,60 @@
+PROCEDURE dot_product(v1,v2, VAR s)
+VAR
+    
+BEGIN
+IF (v1.length = v2.length) THEN
+    FOR i FROM 0 TO v1.length-1 DO
+        s:= s + v1[i]*v2[i]
+    END_FOR
+    
+ELSE 
+Write('the two vectors does not have the same length.')
+END_IF
+END
+
+ALGORITHM orthogonal
+VAR
+    n:INTEGER
+    Arr1 , Arr2 :  A : ARRAY_OF ARRAY[n];
+    s:real;
+BEGIN
+
+    FOR j FROM 0 TO n-1 DO 
+        dot_product(Arr1[j],Arr2[j], VAR s)
+        IF ( s=0 ) THEN 
+            write ( v1 + 'and' + v2 +'are orthogonals.')
+        END_IF
+    END_FOR
+END
+
+
+FUNCTION dot_product(v1,v2, s): real
+VAR
+    
+BEGIN
+IF (v1.length = v2.length) THEN
+    FOR i FROM 0 TO v1.length-1 DO
+        s:= s + v1[i]*v2[i]
+    END_FOR
+    
+ELSE 
+Write('the two vectors does not have the same length.')
+END_IF
+return s;
+END
+
+ALGORITHM orthogonal
+VAR
+    n:INTEGER
+    Arr1 , Arr2 :  A : ARRAY_OF ARRAY[n];
+    s,res:real;
+    
+BEGIN
+
+    FOR j FROM 0 TO n-1 DO 
+        res:= dot_product(Arr1[j],Arr2[j],  s)
+        IF ( s=0 ) THEN 
+            write ( v1 + 'and' + v2 +'are orthogonals.')
+        END_IF
+    END_FOR
+END
